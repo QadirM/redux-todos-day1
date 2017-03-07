@@ -1,7 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Todo.delete_all
+t1 = Todo.create!(title: "establish communication with O'Brian", body: "he should be a good guy", done: false)
+t2 = Todo.create!(title: "watch propaganda", body: "war is peace", done: false)
+t3 = Todo.create!(title: "make word illegal", body: "burn Thunk!", done: false)
+t4 = Todo.create!(title: "declare war", body: "Oceania is our enemy", done: false)
