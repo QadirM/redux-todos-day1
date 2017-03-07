@@ -6,6 +6,7 @@ import Root from './components/root';
 import { allTodos, allSteps, stepsByTodoId } from './reducers/selectors';
 
 const store = configureStore();
+
 document.addEventListener('DOMContentLoaded', () => {
   const content = document.getElementById('content');
   ReactDOM.render(<Root store={ store }/>,content);
