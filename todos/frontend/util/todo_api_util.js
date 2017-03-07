@@ -1,8 +1,8 @@
-const todoApiUtil = () => (
+const fetchTodos = () => (
   $.ajax({
     type: "GET",
     url: "api/todos"
   })
 );
 
-export default todoApiUtil;
+export { fetchTodos };

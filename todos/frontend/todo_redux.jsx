@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store.js';
-import { receiveTodos, receiveTodo } from './actions/todo_actions';
+import { fetchTodos,
+  receiveTodos,
+  receiveTodo,
+  removeTodo
+} from './actions/todo_actions';
 import Root from './components/root';
 import { allTodos, allSteps, stepsByTodoId } from './reducers/selectors';
 
@@ -13,7 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.store = store;
+window.fetchTodos = fetchTodos;
 window.receiveTodos = receiveTodos;
 window.receiveTodo = receiveTodo;
+window.removeTodo = removeTodo;
 window.stepsByTodoId = stepsByTodoId;
 window.allSteps = allSteps;

@@ -4,7 +4,6 @@ import TodoDetailView from './todo_detail_view';
 class TodoListItem extends React.Component {
 
   constructor ({todo, removeTodo, receiveTodo}) {
-    // console.log(receiveTodo);
     super();
     this.state = {todo: todo, expanded: false };
     this.removeTodo = removeTodo.bind(this);
