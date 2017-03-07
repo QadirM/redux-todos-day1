@@ -31,8 +31,8 @@ class Api::TodosController < ApplicationController
   def destroy
     todo = Todo.find(params[:id])
     todo.destroy
-    # TODO: Is this necessary?
-    render json: ""
+    # QUESTION: Is this necessary?
+    render json: todo
   end
 
   def todo_params(params)
