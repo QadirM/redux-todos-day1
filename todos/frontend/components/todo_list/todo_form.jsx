@@ -1,6 +1,10 @@
 import React from 'react';
 import {uniqueId} from '../../util/util';
 
+// TODO: When marking a todo as 'DONE' it is duplicating that todo in
+// the display and the database. Come back to this. Also, clicking
+// delete on a todo item deletes the last todo item.
+
 class TodoForm extends React.Component{
   constructor({createTodo}) {
     super();
