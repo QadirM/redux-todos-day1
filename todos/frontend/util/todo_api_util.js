@@ -1,8 +1,14 @@
-const fetchTodos = () => (
+export const fetchTodos = () => (
   $.ajax({
     type: "GET",
     url: "api/todos"
   })
 );
 
-export { fetchTodos };
+export const addTodo = (todo) => (
+  $.ajax({
+    type: "POST",
+    url: "api/todos",
+    data: { todo }
+  })
+);

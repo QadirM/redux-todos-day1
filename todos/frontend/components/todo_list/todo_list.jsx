@@ -16,13 +16,13 @@ class TodoList extends React.Component {
       <TodoListItem key={idx}
                     todo={ todo }
                     removeTodo={this.props.removeTodo}
-                    receiveTodo={this.props.receiveTodo} />
+                    createTodo={this.props.createTodo} />
       )
     );
 
     return(
       <div>
-        <TodoForm receiveTodo={ this.props.receiveTodo }/>
+        <TodoForm createTodo={ this.props.createTodo }/>
         <ul>
           {listItems}
         </ul>

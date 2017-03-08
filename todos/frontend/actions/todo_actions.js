@@ -20,7 +20,13 @@ export const removeTodo = (todo) => ({
 });
 
 export const fetchTodos = () => (dispatch) => (
-  TodoApiUtil.fetchTodos().then(todos => {
-    dispatch(receiveTodos(todos));
-  })
+  TodoApiUtil.fetchTodos().then(todos => (
+    dispatch(receiveTodos(todos))
+  ))
+);
+
+export const createTodo = (todo) => (dispatch) => (
+  TodoApiUtil.addTodo(todo).then(storedTodo => (
+    dispatch(receiveTodo(storedTodo))
+  ))
 );

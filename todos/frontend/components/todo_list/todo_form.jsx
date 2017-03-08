@@ -2,25 +2,55 @@ import React from 'react';
 import {uniqueId} from '../../util/util';
 
 class TodoForm extends React.Component{
-  constructor({receiveTodo}) {
+  constructor({createTodo}) {
     super();
-    this.receiveTodo = receiveTodo.bind(this);
-    this.state = {title: ''};
+    this.createTodo = createTodo.bind(this);
+    this.state = {
+      title: '',
+      body: ''
+    };
   }
 
   changeTitle(event) {
+    event.preventDefault();
     this.setState({ title: event.target.value });
   }
 
-  makeTodo() {
-    this.receiveTodo({title: this.state.title, id: uniqueId()});
-    this.setState({ title: '' });
+
+  changeBody(event) {
+    event.preventDefault();
+    this.setState({ body: event.target.value });
+  }
+
+  makeTodo(event) {
+    event.preventDefault();
+    this.createTodo({
+      title: this.state.title,
+      body: this.state.body,
+      done: false
+    }).then( () => (
+      this.setState({
+        title: '',
+        body: ''
+      })
+    ));
   }
 
   render() {
     return (
       <div>
-        <input onChange={this.changeTitle.bind(this)} value={this.state.title}/>
+        <label>
+          Title:
+          <input onChange={this.changeTitle.bind(this)}
+                 value={this.state.title}/>
+        </label>
+        <br></br>
+        <label>
+          Body:
+          <input onChange={this.changeBody.bind(this)}
+                 value={this.state.body}/>
+        </label>
+        <br></br>
         <button onClick={this.makeTodo.bind(this)}>Add todo</button>
       </div>
     );

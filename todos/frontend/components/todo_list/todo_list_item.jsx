@@ -3,17 +3,17 @@ import TodoDetailView from './todo_detail_view';
 
 class TodoListItem extends React.Component {
 
-  constructor ({todo, removeTodo, receiveTodo}) {
+  constructor ({todo, removeTodo, createTodo}) {
     super();
     this.state = {todo: todo, expanded: false };
     this.removeTodo = removeTodo.bind(this);
-    this.receiveTodo = receiveTodo.bind(this);
+    this.createTodo = createTodo.bind(this);
   }
 
   flipStatus() {
     let newStatus = !this.state.todo.done;
     let newTodo = Object.assign({}, this.state.todo, {done: newStatus});
-    this.receiveTodo(newTodo);
+    this.createTodo(newTodo);
     this.setState({todo: newTodo});
   }
 
